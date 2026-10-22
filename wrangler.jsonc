@@ -1,6 +1,7 @@
 {
   "name": "hvirk-dev",
   "compatibility_date": "2025-10-01",
+  "routes": [{ "pattern": "hvirk.dev", "custom_domain": true }],
   "assets": {
     "directory": "./_site"
   }
