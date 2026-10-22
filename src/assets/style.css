@@ -76,6 +76,16 @@ h1 {
 }
 .prose blockquote p { margin: 0; }
 
+/* Comments */
+
+.comments {
+  max-width: 34rem;
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+.comments h2 { margin: 0 0 1.25rem; font: 900 1.45rem/1.25 var(--head-font); }
+
 /* Small screens: the sidebar becomes a header */
 
 @media (max-width: 860px) {
