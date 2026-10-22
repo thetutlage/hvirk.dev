@@ -1,5 +1,6 @@
 ---
 title: A practical look at software factories
+description: Why an assembly line doesn't fit software, where a factory does fit, and the principles I'm starting from.
 date: 2026-10-22
 series: Software factories for rest of us
 part: 1
