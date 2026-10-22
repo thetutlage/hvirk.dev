@@ -1,0 +1,99 @@
+:root {
+  --paper: #ffffff;
+  --ink: #262626;
+  --muted: #7a7a7a;
+  --rule: #e4e4e4;
+  --accent: #2a5d8f;
+  --body-font: Georgia, "Times New Roman", serif;
+  --head-font: "Lato", "Helvetica Neue", Arial, sans-serif;
+  --side-width: 260px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 1.25rem/1.65 var(--body-font);
+}
+
+a { color: var(--accent); text-underline-offset: 0.15em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+/* Sidebar */
+
+.side {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--side-width);
+  padding: 64px 32px;
+  border-right: 1px solid var(--rule);
+  font: 400 0.9rem/1.5 var(--head-font);
+  color: var(--muted);
+}
+
+.author { display: block; color: var(--ink); text-decoration: none; }
+.avatar { display: block; width: 72px; height: 72px; border-radius: 50%; margin-bottom: 1rem; }
+.name { display: block; margin-bottom: 0.5em; font: 900 1.35rem/1.2 var(--head-font); }
+.author:hover .name { color: var(--accent); }
+
+.bio { margin: 0 0 1.5em; }
+.bio a { color: inherit; }
+.bio a:hover { color: var(--accent); }
+
+.side nav a { display: block; margin-bottom: 0.3em; color: var(--ink); text-decoration: none; }
+.side nav a:hover { color: var(--accent); }
+
+/* Article */
+
+main { margin-left: var(--side-width); padding: 64px 48px 96px; }
+article { max-width: 34rem; }
+
+.series { margin: 0 0 0.75rem; font: 700 0.95rem/1.4 var(--head-font); color: var(--accent); }
+
+h1 {
+  margin: 0 0 0.6rem;
+  font: 900 2.9rem/1.08 var(--head-font);
+  letter-spacing: -0.02em;
+}
+
+.date { margin: 0 0 2.75rem; font: 400 0.95rem/1.4 var(--head-font); color: var(--muted); }
+
+.prose h2 { margin: 2.2em 0 0.7em; font: 900 1.45rem/1.25 var(--head-font); }
+.prose p { margin: 0 0 1.25em; }
+.prose ol, .prose ul { margin: 0 0 1.25em; padding-left: 1.4em; }
+.prose li { margin-bottom: 0.6em; padding-left: 0.2em; }
+.prose blockquote {
+  margin: 1.6em 0;
+  padding: 0 0 0 1.1em;
+  border-left: 3px solid var(--accent);
+  font-style: italic;
+}
+.prose blockquote p { margin: 0; }
+
+/* Small screens: the sidebar becomes a header */
+
+@media (max-width: 860px) {
+  body { font-size: 1.1rem; }
+
+  .side {
+    position: static;
+    width: auto;
+    padding: 24px 16px;
+    border-right: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .author { display: flex; align-items: center; gap: 12px; }
+  .avatar { width: 44px; height: 44px; margin: 0; }
+  .name { margin: 0; font-size: 1.2rem; }
+  .bio { margin: 0.75rem 0 0.5rem; }
+  .side nav a { display: inline; margin-right: 1em; }
+
+  main { margin-left: 0; padding: 40px 16px 64px; }
+  h1 { font-size: 2.1rem; }
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} | {{ site.author }}</title>
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<link rel="icon" href="/assets/virk.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<aside class="side">
+  <a class="author" href="/">
+    <img class="avatar" src="/assets/virk.jpg" alt="" width="72" height="72">
+    <span class="name">{{ site.author }}</span>
+  </a>
+  <p class="bio">Principal Markdown Engineer. Building <a href="https://x.com/adonisframework">@adonisframework</a></p>
+  <nav>
+    <a href="https://github.com/thetutlage">GitHub</a>
+  </nav>
+</aside>
+
+<main>
+  <article>
+    <header class="post">
+      {% if series %}<p class="series">{{ series }}, part {{ part }}</p>{% endif %}
+      <h1>{{ title }}</h1>
+      <p class="date"><time datetime="{{ page.date.toISOString() }}">{{ page.date | readableDate }}</time></p>
+    </header>
+    <div class="prose">
+{{ content | safe }}
+    </div>
+  </article>
+</main>
+
+</body>
+</html>
